@@ -444,6 +444,7 @@ export const PROP_KEYS = {
     'infinite',
     'centerMode',
     'currentSlide',
+    'inViewClass',
     'lazyLoad',
     'lazyLoadedList',
     'rtl',

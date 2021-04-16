@@ -8,7 +8,7 @@ import {
 import { cloneVNode, getData, mergeVNodeData } from './vNodeUtils'
 
 const getSlideClasses = spec => {
-  let slickActive, slickCenter, slickCloned
+  let slickActive, slickCenter, slickCloned, slickInView
   let centerOffset, index
 
   if (spec.rtl) {
@@ -31,6 +31,14 @@ const getSlideClasses = spec => {
       spec.currentSlide <= index &&
       index < spec.currentSlide + spec.slidesToShow
   }
+  if (spec.inViewClass) {
+    slickInView =
+      slickActive ||
+      (!spec.infinite &&
+        !slickCloned &&
+        index < spec.currentSlide + spec.slidesToShow &&
+        index >= spec.slideCount - spec.slidesToShow)
+  }
   let slickCurrent = index === spec.currentSlide
   return {
     'slick-slide': true,
@@ -38,6 +46,7 @@ const getSlideClasses = spec => {
     'slick-center': slickCenter,
     'slick-cloned': slickCloned,
     'slick-current': slickCurrent, // dubious in case of RTL
+    [spec.inViewClass]: slickInView,
   }
 }
 

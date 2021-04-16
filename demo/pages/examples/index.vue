@@ -12,7 +12,10 @@
         align="center"
         justify="center"
         no-gutters
-        :class="{ 'carousel-wrapper': true, 'as-nav-for': config.asNavFor }"
+        :class="[
+          { 'carousel-wrapper': true, 'as-nav-for': config.asNavFor },
+          config.customClasses,
+        ]"
       >
         <v-col cols="8" class="pa-7">
           <VueSlickCarousel
@@ -132,13 +135,16 @@ export default {
       return this.config.template ? this.config.template : exampleVueTemplate
     },
     classes() {
-      const { asNavFor } = this.config
+      const { asNavFor, customClasses } = this.config
       const { vertical, rows, adaptiveHeight } = this.config.settings
 
-      return {
-        'short-row': vertical || rows > 1 || asNavFor,
-        'adaptive-height': adaptiveHeight,
-      }
+      return [
+        {
+          'short-row': vertical || rows > 1 || asNavFor,
+          'adaptive-height': adaptiveHeight,
+        },
+        customClasses,
+      ]
     },
   },
   data() {
@@ -258,5 +264,9 @@ export default {
     box-shadow: unset;
     background-color: var(--v-secondary-base);
   }
+}
+
+.carousel-wrapper.slider-in-view {
+  overflow: hidden;
 }
 </style>

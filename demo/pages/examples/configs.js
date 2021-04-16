@@ -124,6 +124,20 @@ export default {
       speed: 500,
     },
   },
+  'in-view': {
+    title: 'In View',
+    customClasses: 'slider-in-view',
+    numSlides: 10,
+    settings: {
+      dots: true,
+      infinite: false,
+      inViewClass: 'slick-in-view',
+      slickInView: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+    },
+  },
   fade: {
     title: 'Fade',
     numSlides: 4,
