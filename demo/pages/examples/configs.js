@@ -132,7 +132,6 @@ export default {
       dots: true,
       infinite: false,
       inViewClass: 'slick-in-view',
-      slickInView: true,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 4,

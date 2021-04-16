@@ -1,7 +1,7 @@
 {
-  "name": "vue-slick-carousel",
+  "name": "@centiva/vue-slick-carousel",
   "version": "1.0.6",
-  "description": "Vue Slick Carousel with True SSR Written for Faster Luxstay",
+  "description": "Centiva's version of Vue Slick Carousel with True SSR Written for Faster Luxstay",
   "keywords": [
     "vue",
     "slick",
